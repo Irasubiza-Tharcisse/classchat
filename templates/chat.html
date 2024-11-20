@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Chat Web App</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/chat.css')}}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+        /* animation */
+        @keyframes backgroundAnimation {
+            0% { background-color: #FF5733; } /* Red */
+            25% { background-color: aqua; } /* aqua */
+            50% { background-color: #3357FF; } /* Blue */
+            75% { background-color: #F3FF33; } /* Yellow */
+            100% { background-color: #FF33A1; } /* Pink */
+        }
+        .chat-container {
+            width: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .chat-header h1 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .chat-box {
+            padding: 15px;
+            height: 400px;
+            overflow-y: auto;
+        }
+
+        .chat-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .message-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .username {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .timestamp {
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .message-content {
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 80%;
+            word-wrap: break-word;
+            position: relative; /* Add position: relative for absolute positioning of timestamp */
+        }
+
+        .message-content.sent {
+            background-color: #dcf8c6;
+            color: #333;
+            margin-right: auto; /* Align sent messages to the right */
+            text-align: right; /* Align text to the right */
+        }
+
+        .message-content.received {
+            background-color: #f2f2f2;
+            margin-left: auto; /* Align received messages to the left */
+        }
+
+        .message-content .timestamp { /* Style the timestamp within the message */
+            position: absolute;
+            bottom: 5px;
+            right: 10px; /* Position at bottom right of the message */
+            font-size: 0.7rem; /* Smaller font size */
+        }
+
+        #chat-form {
+            padding: 15px;
+            display: flex;
+        }
+
+        #message-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #chat-form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #chat-form button:hover {
+            background-color: #0062cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>Class Chat</h1>
+        </header>
+        <div class="chat-box" id="chat-box">
+            <!-- Messages will be displayed here -->
+            <h1>Chat Messages</h1>
+
+            <div class="chat-list">
+                {% for message in messages %}
+                    <div class="message-item" {% if message.sent %}style="justify-content: flex-end;"{% endif %}>
+                        <div class="message-header">
+                            <span class="username">{{ message.username }}</span>
+                            <span class="timestamp">{{ message.time }}</span>
+                        </div>
+                        <div class="message-content {% if message.sent %}sent{% else %}received{% endif %}">
+                            {{ message.message }}
+                            <span class="timestamp">{{ message.time }}</span> <!-- Display timestamp within the message -->
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        
+        </div>
+        <form id="chat-form" action="/send-message" method="POST">
+            <input type="text" name="message" id="message-input" placeholder="Type your message..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+   
+</body>
+</html>

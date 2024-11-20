@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MAIN BAR</title>
+        <style>
+
+            body {
+                font-family: Arial, sans-serif; /* Set a default font */
+            }
+
+            .sidebar {
+                width: 200px; /* Set width for sidebar */
+                background-color: #f4f4f4; /* Background color */
+                padding: 20px; /* Padding inside sidebar */
+                position: fixed; /* Keep sidebar fixed */
+                height: 100%; /* Full height */
+            }
+
+            .menu-links {
+                list-style-type: none; /* Remove bullet points */
+                padding: 0; /* Remove default padding */
+            }
+
+            .menu-links li {
+                margin: 10px 0; /* Space between links */
+            }
+
+            .menu-links li a {
+                display: block; /* Make the link fill the space */
+                padding: 10px; /* Padding for clickable area */
+                color: #333; /* Text color */
+                text-decoration: none; /* Remove underline */
+                border-radius: 5px; /* Rounded corners */
+            }
+
+            .menu-links li a:hover {
+                background-color: #ddd; /* Change background on hover */
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <h1>MAIN CLASS OPTIONS</h1>
+        <div class="sidebar">
+            <ul class="menu-links">
+                <li><a href="{{ url_for('chat') }}" target="mainpage">View Chats</a></li>
+                <li><a href="{{ url_for('academic') }}" target="mainpage"">View books</a></li>
+                
+                
+            </ul>
+        </div>
+    </body>
+</html>

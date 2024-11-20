@@ -1,0 +1,87 @@
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4ff; /* Light background */
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    header h1 {
+        color: #007BFF; /* Main blue color */
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+    .feature {
+        background-color: #ffffff; /* White background for features */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: calc(30% - 20px); /* Adjust width for spacing */
+    }
+
+    .feature h2 {
+        color: #007BFF; /* Main blue color */
+    }
+
+    .feature p {
+        color: #666; /* Darker gray for text */
+    }
+
+    .cta {
+        text-align: center;
+    }
+
+    .cta h2 {
+        margin-bottom: 20px;
+    }
+
+    .cta button {
+        padding: 10px 20px;
+        background-color: #007BFF; /* Main blue color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+    .cta button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+    }

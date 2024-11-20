@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Classchat | signUp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"}}">
+              <!-- footer css -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+		<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Signup to join your class</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrap d-md-flex">
+						<div class="text-wrap p-4 p-lg-5 d-flex img" style="background-image: url({{url_for('static',filename='images/bg.jpg')}});">
+							<div class="text w-100">
+								<h2 class="mb-4">Welcome to signup form</h2>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							</div>
+			      </div>
+						<div class="login-wrap p-4 p-md-5">
+			      	<div class="row justify-content-center py-md-5">
+			      		<div class="col-lg-9">
+			      			
+									<form action="/submit-signup" method="POST" class="signup-form">
+										<div class="row">
+											
+											
+											<div class="col-md-12">
+												<div class="form-group">
+							      			<label class="label" for="name">Username</label>
+							      			<input type="text" class="form-control" name="username">
+							      		</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+							      			<label class="label" for="email">Email Address</label>
+							      			<input type="text" class="form-control" name="email" required>
+							      		</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+														<label for="activationCode">Activation Code:</label>
+														<input type="text" class="form-control" name="activationcode" placeholder="Enter activation code" required>
+												</div>
+											</div>	
+											<div class="col-md-12">
+												<div class="form-group">
+						            	<label class="label" for="password">Password</label>
+						              <input type="password" class="form-control" name="password" required>
+						            </div>
+											</div>	
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="confirmpassword">confirmPassword</label>
+													<input type="password" class="form-control" name="confirmpassword" required>
+												</div>
+											</div>
+											      <div>{{error}}</diV
+											<div class="col-md-12 my-4">
+												<div class="form-group">
+						            	<div class="w-100">
+							            	<label class="checkbox-wrap checkbox-primary">I agree all statements in terms of service
+														  <input type="checkbox" checked>
+														  <span class="checkmark"></span>
+														</label>
+													</div>
+						            </div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+						            	<button type="submit" class="btn btn-primary submit p-3">Create an account</button>
+						            </div>
+											</div>
+										</div>
+
+				          </form>
+				          <div class="w-100">
+										<p class="mt-4">I'm already a member! <a href="{{url_for('index')}}">Sign In</a></p>
+				          </div>
+			      		</div>
+			      	</div>
+		        </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{{url_for('static',filename='js/jquery.min.js')}}"}}"></script>
+  <script src="{{url_for('static',filename='js/popper.js')}}"}}"></script>}}"></script>
+  <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"}}"></script>
+  <script src="{{url_for('static',filename='js/mainsignup.js')}}"}}"></script>}}"></script>
+
+
+
+
+
+
+		<footer class="footer-07">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-12 text-center">
+						<h2 class="footer-heading"><a href="#" class="logo">Colorlib.com</a></h2>
+						<p class="menu">
+							<a href="#">Home</a>
+							<a href="#">Agent</a>
+							<a href="https://software-engineers.renderforestsites.com/#comp-18d8916cee6" target="_blank">About</a>
+							<a href="#">Listing</a>
+							<a href="#">Blog</a>
+							<a href="https://software-engineers.renderforestsites.com/#comp-18d5e619ced" target="_blank">Contact</a>
+						</p>
+						<ul class="ftco-footer-social p-0">
+							<li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
+							<li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-12 text-center">
+						<p class="copyright">
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This webApp is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://software-engineers.renderforestsites.com/" target="_blank" data-placement="top" title="Get close for more information">@Tharcisse.com</a>
+					</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+		
+		<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/popper.js')}}"></script>
+		<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/main.js')}}"></script>
+		
+	</body>
+</html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Class Web App</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Chat Class</h1>
+            <p>Your platform for seamless communication and collaboration.</p>
+        </header>
+
+        <main>
+            <div class="features">
+                <div class="feature">
+                    <h2>Real-Time Chat</h2>
+                    <p>Engage in instant messaging with your classmates and instructors.</p>
+                </div>
+                <div class="feature">
+                    <h2>Group Discussions</h2>
+                    <p>Create groups for collaborative learning and discussions.</p>
+                </div>
+                <div class="feature">
+                    <h2>File Sharing</h2>
+                    <p>Easily share documents, images, and resources with your peers.</p>
+                </div>
+            </div>
+
+            <div class="cta">
+                <h2>Get Started Today! Enjoy communication</h2>
+                <a href="{{ url_for('start')}}"> 
+                    <button>GET STARTED OR LOGIN</button>
+                </a>
+                
+            </div>
+        </main>
+    </div>
+
+
+
+
+    <footer class="footer-07">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <h2 class="footer-heading"><a href="#" class="logo">Classchat.com</a></h2>
+                    <p class="menu">
+                        <a href="#">Home</a>
+                        <a href="#">Agent</a>
+                        <a href="https://software-engineers.renderforestsites.com/#comp-18d8916cee6" target="_blank">About</a>
+                        <a href="#">Listing</a>
+                        <a href="#">Blog</a>
+                        <a href="https://software-engineers.renderforestsites.com/#comp-18d5e619ced" target="_blank">Contact</a>
+                    </p>
+                    <ul class="ftco-footer-social p-0">
+          <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
+          <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
+          <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
+        </ul>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12 text-center">
+                    <p class="copyright">
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This webApp is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://software-engineers.renderforestsites.com/" data-toggle="tooltip" target="_blank" data-placement="top" title="Get close for more information">@Tharcisse.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/popper.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+
+    
+</body>
+</html>

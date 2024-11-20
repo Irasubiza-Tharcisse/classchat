@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+            margin: 0; /* Remove default margin */
+        }
+        h1 {
+            color: #333; /* Dark gray text for the heading */
+        }
+        .container {
+            background-color: white; /* White background for the form */
+            padding: 20px; /* Padding around the form */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 300px; /* Fixed width for the form */
+        }
+        .input-group {
+            position: relative; /* Position relative for icon positioning */
+            margin-bottom: 15px; /* Space between input groups */
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 270; /* Full width inputs */
+            padding: 10px 40px 10px 40px; /* Padding inside inputs with space for icons */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px; /* Rounded corners for inputs */
+        }
+        .icon {
+            position: absolute; /* Positioning the icon absolutely within the input group */
+            left: 10px; /* Position from the left */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for vertical centering */
+            color: #aaa; /* Light gray color for icons */
+        }
+        button {
+            width: 100%; /* Full width button */
+            padding: 10px; /* Padding inside button */
+            background-color: #5cb85c; /* Green background for button */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners for button */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        button:hover {
+            background-color: #4cae4c; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+       <h1>Admin Login</h1>
+        <form action="/adminlogin" method="POST">
+            <div class="input-group">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" placeholder="Admin Email" name="email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock icon"></i>
+                <input type="password" placeholder="Admin Password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

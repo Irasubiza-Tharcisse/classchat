@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASS CHAT WEB APP Layout Template</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/ionicons.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            background-image: url('https://www.transparenttextures.com/patterns/light-gitter.png');
+          
+        }
+
+     
+
+        
+        header {
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #007BFF; /* Blue background */
+            color: white; /* Text color */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow */
+            margin: 0px;
+            position: fixed;
+            width: 100%;
+        }
+
+        
+        .profile-menu {
+            display: flex;
+            align-items: center;
+        }
+        .fas fa-user-circle fa-2x{
+            width: 100px;
+            height: 100px;
+        }
+        .profile-menu i {
+            margin-right: 10px;
+        }
+
+        .container {
+            display: flex;
+            height: 100vmin; /* Adjust for header height */
+            overflow: scroll;
+            padding-top: 150px;
+
+        
+        }
+
+        .iframe-container {
+            flex: 1; /* Center iframe */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 80%;
+            height: 90%;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            width: 300px; /* Left and right iframes */
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+   
+<header>
+    
+    <h1>{{classname}} CHAT WEB APP</h1>
+    <marquee>{{classname}} activation code {{classcode}}</marquee>
+    <div class="profile-menu">
+        <i class="fas fa-user-circle fa-2x"></i>
+        <div style="padding-right:40px;">
+            <span>{{username}}</span><br>
+            <span>{{email}}</span><br>
+            <a href="{{ url_for('logout')}}"><button type="button">Logout</button></a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="sidebar">
+        <iframe src="{{ url_for('leftiframe') }}" title="Left Iframe"></iframe>
+    </div>
+
+    <div class="iframe-container">
+        <iframe src="{{ url_for('centeriframe') }}" name="mainpage" title="Center Iframe"></iframe>
+    </div>
+
+    <div class="sidebar">
+        <iframe src="{{ url_for('rightiframe') }}" title="Right Iframe"></iframe>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Class-chat. All rights reserved.<br>
+    CREATED BY <a href="https://software-engineers.renderforestsites.com/" target="_blank"> @Tharcisse</a>
+</footer>
+
+</body>
+</html>

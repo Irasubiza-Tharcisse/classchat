@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Classchat | Login page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{{url_for('static',filename='images/icons/favicon.ico')}}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}"}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}"}}">
+<!--===============================================================================================-->
+
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+	 
+	<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+<style>
+	.error{
+		color: red;
+		text-align: center;
+	}
+</style>
+	
+</head>
+<body style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="/login" method="POST">
+					<span class="login100-form-title p-b-43">
+						Login to continue
+					</span>
+
+					 <div class="error">
+
+						 {% with messages = get_flashed_messages(with_categories=True) %}
+								 {% if messages %}
+										 {% for category, message in messages %}
+												 <div class="alert alert-{{ category }}">
+														 {{ message }}
+												 </div>
+										 {% endfor %}
+								 {% endif %}
+						 {% endwith %}
+					 
+					 </div>
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Email</span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Password</span>
+					</div>
+
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							<a href="#" class="txt1">
+								Forgot Password?
+							</a>
+						</div>
+					</div>
+			
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+          <br><br>
+					<div class="admin-btn">
+					 <a href="{{ url_for('adminl') }}" style="padding: 20px;" >
+						 <button type="button">Login as Admin</button>
+					 </a>	
+					</div>	
+					
+					
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							or sign up 
+						</span>
+					</div>
+
+					<div class="create-btn">
+						<a href="{{ url_for('signupform') }}" style="margin-right:15px;" >
+							<button class="sign-link" type="button"><b>signup to your class</b></button>
+						</a>
+
+						<a href="{{ url_for('createclass') }}" >
+							<button class="createclass" type="button"><b>create class</b></button>
+						</a>
+					</div>
+				</form>
+
+				<div class="login100-more" style="background-image: url({{url_for('static',filename='images/classbg.jpg')}})">
+					<div class="content" style="padding-top: 500px;padding-left: 230px;color: blue;font-size: 30px;">
+						<b>Welcome back to your class chat</b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='js/main.js')}}"}}"></script>
+
+
+
+
+	<footer class="footer-07">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12 text-center">
+					<h2 class="footer-heading"><a href="#" class="logo">Classchat.com</a></h2>
+					<p class="menu">
+						<a href="#">Home</a>
+						<a href="#">Agent</a>
+						<a href="https://software-engineers.renderforestsites.com/#comp-18d8916cee6" target="_blank">About</a>
+						<a href="#">Listing</a>
+						<a href="#">Blog</a>
+						<a href="https://software-engineers.renderforestsites.com/#comp-18d5e619ced" target="_blank">Contact</a>
+					</p>
+					<ul class="ftco-footer-social p-0">
+						<li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row mt-5">
+				<div class="col-md-12 text-center">
+					<p class="copyright">
+						
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This webApp is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://software-engineers.renderforestsites.com/" target="_blank" data-placement="top" title="Get close for more information">@Tharcisse.com</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	
+
+	<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/popper.js')}}"></script>
+	<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+
+
+
+
+
+	
+
+</body>
+</html>
